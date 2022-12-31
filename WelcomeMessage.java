@@ -9,22 +9,13 @@ public class WelcomeMessage {
         Random random = new Random();
         int dice = random.nextInt(6) + 1;// uc2
         int game = random.nextInt(3) + 1; // uc3
-// 1: No play case
-// 2: Ladder Case
-// 3: Snake Case
         switch (game) {
-            case 1 -> {                                 // No Play case
-                player += 0;
-                System.out.println("New Score of Player is => " + player);
-            }
-            case 2 -> {                                 // Ladder Case
-                player = player + dice;
-                System.out.println("New Score of Player is => " + player);
-            }
-            case 3 -> {                                 // Snake Case
-                player = player - dice;
-                System.out.println("New Score of Player is => " + player);
-            }
+            case 1:// uc4
+                player = player + 0;  // No Play Case
+                System.out.print(" Dice shows: 0");
+                System.out.println(" New Score of Player is => " + player);
+                System.out.println("");
+                break;
+        }
         }
     }
-}
