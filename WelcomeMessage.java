@@ -1,4 +1,6 @@
 package SnakeAndLadderGame;
+import com.sun.source.tree.ContinueTree;
+
 import java.util.Random;
 public class WelcomeMessage {
 
@@ -12,9 +14,51 @@ public class WelcomeMessage {
         switch (game) {
             case 1:// uc4
                 player = player + 0;  // No Play Case
-                System.out.print(" Dice shows: 0");
-                System.out.println(" New Score of Player is => " + player);
+                System.out.print(" No play! ");
+                System.out.println(" Score of Player is still => " + player);
                 System.out.println("");
+                break;
+
+            case 2: //uc5
+                int temp = player;
+                player = player + dice; // Ladder Case
+                if (player > 100) {
+                    int zero =0;
+                    player =  zero + temp;
+                    System.out.print(" Dice shows: "+dice);
+                    System.out.println(" Try Again! ");
+                    System.out.println(" New Score of Player is => " + player);
+
+                } else if (player ==100) { //uc5
+                    System.out.print(" Dice shows: "+dice);
+                    System.out.println(" New Score of Player is => " + player);
+                    System.out.println("Player won!");
+
+                } else {
+                    System.out.print(" Dice shows: "+dice);
+                    System.out.println(" Its a Ladder! Move "+dice+" ahead!");
+                    System.out.println(" New Score of Player is => " + player);
+                    System.out.println("");
+                }
+                break;
+
+            case 3:
+
+                player = player - dice; // Snake Case
+
+                if (player <= 0) {
+                    int tempp = 0;
+                    player = tempp;
+                    System.out.print(" Dice shows: "+dice);
+                    System.out.println(" Its a Snake! Go back 0(start) position");
+                    System.out.println(" New Score of Player is => " + player);
+                    System.out.println("");
+                } else {
+                    System.out.print(" Dice shows: " + dice);
+                    System.out.println(" Its a Snake! Go back " + dice + " position");
+                    System.out.println(" New Score of Player is => " + player);
+                    System.out.println("");
+                }
                 break;
         }
         }
